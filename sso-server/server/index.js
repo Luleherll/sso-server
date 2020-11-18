@@ -26,7 +26,6 @@ axiosInstance.interceptors.response.use(
 
 const cache = {}
 const session = {}
-mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useCreateIndex: true,});
 
 app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
