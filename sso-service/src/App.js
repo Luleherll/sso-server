@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        service is running
+        STUDIO is running
       </header>
     </div>
   );
