@@ -5,12 +5,12 @@ const page =() => {
 const handleSubmit = async e => {
     e.preventDefault()
     try {
-        const {serviceURL} = Object.fromEntries(new URLSearchParams(window.location.search))
+        const {src} = Object.fromEntries(new URLSearchParams(window.location.search))
 
-        const res = await axios.post(`/api/login?serviceURL=${serviceURL}`, {email: 'lule@dev.com', password: 'test'});
+        const res = await axios.post(`/api/login?src=${src}`, {email: 'lule@dev.com', password: 'test'});
         console.log(res.data);
-        if (res.data.intrmid) {
-            window.location.href = `${serviceURL}?ssoToken=${res.data.intrmid}`
+        if (res.data.identifier) {
+            window.location.href = `${src}?sso=${res.data.identifier}`
         }
     } catch (error) {
         console.log(error);
